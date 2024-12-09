@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+======================================================================
+	UxS METADATA CURATION TEMPLATE, January 2024 BETA VERSION
+	
+	This is the XML template for NOAA/Navy UxS metadata conforming the ISO 19115-3:2016(E) metadata standards. 
+	It also utilized ISO/FDIS 19157:2013(E)
+	
+	This template is modified for acquisition metadata.
+
+    Example content is provided within this template and should be replaced with actual content for the data that are 
+    being documented. 
+
+    Comments are provided to ease readability.
+
+    Example content will be within {{curly braces}}.
+	Fields without comments and without brachets -{{example}}- contain default values. Not every sensor type is listed 
+	in this template.
+	This is a fully validated template. Dates are not in {{example}} form but in 2000-01-01T00:00:00Z as default. 
+	Please check your dates if you are using this template for your data.
+
+	Authors:
+	For further information about this template, please contact Jennifer Blue
+			DOD/USN/CNMOC 
+			Email: METOC_Feedback@us.navy.mil
+	
+	OR Katharine Weathers
+			DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce 
+			E-mail: ncei.uxs.data@noaa.gov				
+				
+
+	Distribution Liability:
+		NOAA makes no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. 
+		NOAA cannot assume liability for any damages caused by any errors or omissions in these templates.
+
+	Use Constraints:
+		The user is responsible for the results of any application of these templates for other than its
+		intended purpose. These templates cannot guarantee valid output. Additional editing
+		may need to be done in order to have valid records.
+
+	Revisions:
+
+-->
+<mdb:MD_Metadata xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:gml="https://www.opengis.net/gml/3.2"
+	xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+	xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+	xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+	xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+	xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+	xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+	xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+	xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+	xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
+	xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+	xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+	xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+	xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0"
+	xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+	xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+	xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
+	xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
+	xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+	xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
+	xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
+	xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
+	xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
+	xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
+	xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+	xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sml="https://www.opengis.net/sensorml/2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml http://schemas.opengis.net/gml/3.2.1/gml.xsd
+						http://standards.iso.org/iso/19115/-3/mdb/2.0 http://standards.iso.org/iso/19115/-3/mdb/2.0/mdb.xsd 
+						http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt.xsd
+						http://standards.iso.org/iso/19115/-3/cat/1.0 http://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd
+						http://standards.iso.org/iso/19115/-3/cit/2.0 http://standards.iso.org/iso/19115/-3/cit/2.0/cit.xsd
+						http://standards.iso.org/iso/19115/-3/gcx/1.0 http://standards.iso.org/iso/19115/-3/gcx/1.0/gcx.xsd
+						http://standards.iso.org/iso/19115/-3/gex/1.0 http://standards.iso.org/iso/19115/-3/gex/1.0/gex.xsd
+						http://standards.iso.org/iso/19115/-3/lan/1.0 http://standards.iso.org/iso/19115/-3/lan/1.0/lan.xsd
+						http://standards.iso.org/iso/19115/-3/srv/2.0 http://standards.iso.org/iso/19115/-3/srv/2.0/srv.xsd
+						http://standards.iso.org/iso/19115/-3/mas/1.0 http://standards.iso.org/iso/19115/-3/mas/1.0/mas.xsd 
+						http://standards.iso.org/iso/19115/-3/mcc/1.0 http://standards.iso.org/iso/19115/-3/mcc/1.0/mcc.xsd
+						http://standards.iso.org/iso/19115/-3/mco/1.0 http://standards.iso.org/iso/19115/-3/mco/1.0/mco.xsd
+						http://standards.iso.org/iso/19115/-3/mda/1.0 http://standards.iso.org/iso/19115/-3/mda/1.0/mda.xsd
+						http://standards.iso.org/iso/19115/-3/mds/1.0 http://standards.iso.org/iso/19115/-3/mds/1.0/mds.xsd
+						http://standards.iso.org/iso/19115/-3/mex/1.0 http://standards.iso.org/iso/19115/-3/mex/1.0/mex.xsd
+						http://standards.iso.org/iso/19115/-3/mmi/1.0 http://standards.iso.org/iso/19115/-3/mmi/1.0/mmi.xsd
+						http://standards.iso.org/iso/19115/-3/mpc/1.0 http://standards.iso.org/iso/19115/-3/mpc/1.0/mpc.xsd
+						http://standards.iso.org/iso/19115/-3/mrc/1.0 http://standards.iso.org/iso/19115/-3/mrc/1.0/mrc.xsd
+						http://standards.iso.org/iso/19115/-3/mrd/1.0 http://standards.iso.org/iso/19115/-3/mrd/1.0/mrd.xsd
+						http://standards.iso.org/iso/19115/-3/mri/1.0 http://standards.iso.org/iso/19115/-3/mri/1.0/mri.xsd
+						http://standards.iso.org/iso/19115/-3/mrl/1.0 http://standards.iso.org/iso/19115/-3/mrl/1.0/mrl.xsd
+						http://standards.iso.org/iso/19115/-3/mrs/1.0 http://standards.iso.org/iso/19115/-3/mrs/1.0/mrs.xsd
+						http://standards.iso.org/iso/19115/-3/msr/1.0 http://standards.iso.org/iso/19115/-3/msr/2.0/msr.xsd
+						http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd
+						http://standards.iso.org/iso/19115/-3/mac/1.0 http://standards.iso.org/iso/19115/-3/mac/1.0/mac.xsd 
+						http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd
+						http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd 
+						http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd
+						http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd
+						">
+
+	<mdb:metadataIdentifier>
+		<mcc:MD_Identifier>
+			<mcc:code>
+				<!-- For identification of the metadata record, use of UUIDs are recommended. 
+					This identifier string will be different from the File Identifier for the 
+					dataset. -->
+				<gco:CharacterString>{{Unique Identifier Assigned to Metadata Record}}</gco:CharacterString>
+			</mcc:code>
+		</mcc:MD_Identifier>
+	</mdb:metadataIdentifier>
+
+	<!-- Text Locale: It is mandatory to explicitly specify the "locale" of all string-values used in this 
+		metadata record. The default for this template is U.S. English using the UTF-8 character encoding 
+		for specifying string-values. However other languages, country-specific language localizations, 
+		and character sets may be employed. -->
+	<mdb:defaultLocale>
+		<lan:PT_Locale>
+			<lan:language>
+				<lan:LanguageCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+			</lan:language>
+			<lan:characterEncoding>
+				<lan:MD_CharacterSetCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+			</lan:characterEncoding>
+		</lan:PT_Locale>
+	</mdb:defaultLocale>
+
+	<!-- The categories of data represented in the resource being described are specified by an ISO-registered 
+		codelist. For this example, the default for this template is a dataset, but additional scopes might apply to more complex 
+		resources. -->
+	<mdb:metadataScope>
+		<mdb:MD_MetadataScope>
+			<mdb:resourceScope>
+				<mcc:MD_ScopeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ScopeCode.xml#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+			</mdb:resourceScope>
+			<mdb:name>
+				<gco:CharacterString>{{descriptive text describing dataset and how quantitative values are stored or represented}}</gco:CharacterString>
+			</mdb:name>
+		</mdb:MD_MetadataScope>
+	</mdb:metadataScope>
+
+	<!-- Resource Metadata Contact: This is the PREPARER of this metadata record. This can be an organization or person. 
+		There can be more information added to the contact, including phone, and address. Change as needed.-->
+
+	<mdb:contact>
+		<cit:CI_Responsibility>
+			<cit:role>
+				<cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</cit:CI_RoleCode>
+			</cit:role>
+			<cit:party>
+				<cit:CI_Organisation>
+					<cit:name>
+						<gco:CharacterString>{{Name of Organization}}</gco:CharacterString>
+					</cit:name>
+					<cit:contactInfo>
+						<cit:CI_Contact>
+							<cit:address>
+								<cit:CI_Address>
+									<cit:electronicMailAddress>
+										<gco:CharacterString>{{example@email.com}}</gco:CharacterString>
+									</cit:electronicMailAddress>
+								</cit:CI_Address>
+							</cit:address>
+							<!-- optional but recommended -->
+							<cit:onlineResource>
+								<cit:CI_OnlineResource>
+									<cit:linkage>
+										<gco:CharacterString>{{Web address for Organization's data portal or repository}}</gco:CharacterString>
+									</cit:linkage>
+									<cit:name>
+										<gco:CharacterString>{{Name of Organization's data portal or repository}}</gco:CharacterString>
+									</cit:name>
+									<cit:description>
+										<gco:CharacterString>{{Description pf Organization's data portal or repository}}</gco:CharacterString>
+									</cit:description>
+									<cit:function>
+										<cit:CI_OnLineFunctionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_OnLineFunctionCode.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+									</cit:function>
+								</cit:CI_OnlineResource>
+							</cit:onlineResource>
+						</cit:CI_Contact>
+					</cit:contactInfo>
+				</cit:CI_Organisation>
+			</cit:party>
+		</cit:CI_Responsibility>
+	</mdb:contact>
+
+	<!-- Resource Metadata Date and Time: This is the date and time that this metadata record was prepared 
+		(and its content known to be accurate). This format is based on automated capture from the platform/insturment (YYYY-MM-DDTHH:mm:ssZ),
+		however the data can be listed as YYYY-MM-DD-->
+	<mdb:dateInfo>
+		<cit:CI_Date>
+			<cit:date>
+				<gco:Date>2023-06-23</gco:Date>
+			</cit:date>
+			<cit:dateType>
+				<cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_DateTypeCode.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+			</cit:dateType>
+		</cit:CI_Date>
+	</mdb:dateInfo>
+
+	<!-- Metadata Standard Reference: It is a Recommended Best Practice to use the full name of the metadata standard 
+		and its edition in order to eliminate ambiguity. This is the default for this template.-->
+	<mdb:metadataStandard>
+		<cit:CI_Citation>
+			<cit:title>
+				<gco:CharacterString>ISO 19115 Geographic Information Metadata</gco:CharacterString>
+			</cit:title>
+			<cit:edition>
+				<gco:CharacterString>2:2019/Amd 1:2022</gco:CharacterString>
+			</cit:edition>
+		</cit:CI_Citation>
+	</mdb:metadataStandard>
+
+	<!--If you have a spatial representation, you can add it in the section(s) below. There are two types of specialized grids 
+		in ISO. Georectified versus Georeferenceable.-->
+
+	<!-- Spatial Representation Information: The digital representation of spatial information in the dataset. The grid data in the resource has been georectified. 
+	Type of spatial representation info include MD_GridSpatialRepresentation, MD_Georectified, MD_Georeferenceable, MD_VectorSpatialRepresentation, MI_Georectified, MI_Georeferenceable
+    Georectified (regular) grids can be described in the spatialReprentationInfo. Ex. If the lat and lon spacing is uniform in a netCDF or HDF5, the grid could be described as georectifed.
+    Georeferenced (irregular) grids can be described in MD_Georeferenceable. If data are irregularly spaced and can be geolocated using an internal (within the data) coordinate system they
+    georeferenced data. An example would be using a map projection to determine where every point of an aerial photo is located on the surface of Earth.-->
+
+	<mdb:spatialRepresentationInfo>
+		<msr:MD_Georectified>
+			<msr:numberOfDimensions>
+				<gco:Integer><!--number of independent spatial-temporal axes, x, y, or z-->99</gco:Integer>
+			</msr:numberOfDimensions>
+			<msr:cellGeometry>
+				<msr:MD_CellGeometryCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_CellGeometryCode.xml#MD_CellGeometryCode?" codeListValue="grid"/>
+			</msr:cellGeometry>
+
+			<!--Are parameters for transformation between image coordinates and geographic or map coordinates available-->
+			<msr:transformationParameterAvailability>
+				<gco:Boolean><!--true or false-->true</gco:Boolean>
+			</msr:transformationParameterAvailability>
+
+			<!--Are geographic position points available to test the accuracy of the groreferenced grid data-->
+			<msr:checkPointAvailability>
+			    <gco:Boolean><!--true or false-->true</gco:Boolean>
+			</msr:checkPointAvailability>
+
+			<!--Corner Points-->
+			<msr:cornerPoints>
+				<!-- lat DD lon DD is preferred format-->
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-upper-left"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+			<msr:cornerPoints>
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-upper-right"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+			<msr:cornerPoints>
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-lower-right"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+			<msr:cornerPoints>
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-lower-left"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+
+			<!--Point in a pixel corresponding to the Earth location of the pixel-->
+			<msr:pointInPixel>
+				<!-- Orientation of Pixel Coordinates (ex.lower left, center, etc) -->
+				<msr:MD_PixelOrientationCode>lowerLeft</msr:MD_PixelOrientationCode>
+			</msr:pointInPixel>
+		</msr:MD_Georectified>
+	</mdb:spatialRepresentationInfo>
+
+	<!--  ENTER REFERENCE SYSTEM INFORMATION AS NEEDED.  -->
+
+	<mdb:referenceSystemInfo>
+		<mrs:MD_ReferenceSystem>
+			<mrs:referenceSystemIdentifier>
+				<!-- Both the mcc:code and mcc:codeSpace shall be specified. The values here are the default for the template -->
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>WGS84E_2D</gco:CharacterString>
+					</mcc:code>
+					<mcc:codeSpace>
+						<gco:CharacterString>http://standards.iso.org/iso/19115/-3/mrs/1.0</gco:CharacterString>
+					</mcc:codeSpace>
+				</mcc:MD_Identifier>
+			</mrs:referenceSystemIdentifier>
+			<mrs:referenceSystemType>
+				<mrs:MD_ReferenceSystemTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ReferenceSystemTypeCode.xml#MD_ReferenceSystemTypeCode" codeListValue="geodeticGeographic2D"/>
+			</mrs:referenceSystemType>
+		</mrs:MD_ReferenceSystem>
+	</mdb:referenceSystemInfo>
+
+	<!-- Resource Identification Information: The metadata specifically about the Data Content. 
+		It may include thematic and spatio-temporal extent information as well as information related to 
+		provenance. -->
+
+	<mdb:identificationInfo>
+		<mri:MD_DataIdentification>
+
+
+			<mri:citation>
+				<cit:CI_Citation>
+
+					<!--title of dataset-->
+					<cit:title>
+						<gco:CharacterString>{{Title of dataset}}</gco:CharacterString>
+					</cit:title>
+
+					<!--alternate title, can be file name etc-->
+					<cit:alternateTitle>
+						<gco:CharacterString>{{atlernate title}}</gco:CharacterString>
+					</cit:alternateTitle>
+
+					<!--date of data creation. If unknown, use gco:nilReason instead of gco:Date -->
+					<cit:date>
+						<cit:CI_Date>
+							<cit:date>
+								<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+							</cit:date>
+							<cit:dateType>
+								<cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_DateTypeCode.xml#CI_DateTypeCode" codeListValue="publication"/>
+							</cit:dateType>
+						</cit:CI_Date>
+					</cit:date>
+
+					<!-- Citation for resource. In this example citation to acquisition metadata-->
+					<cit:identifier>
+						<mcc:MD_Identifier>
+							<mcc:authority>
+								<cit:CI_Citation>
+									<cit:title>
+										<gco:CharacterString>{{Aquisition (data collection) entity}}</gco:CharacterString>
+									</cit:title>
+									<cit:date>
+										<cit:CI_Date>
+											<cit:date>
+												<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+											</cit:date>
+											<cit:dateType>
+												<cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_DateTypeCode.xml#CI_DateTypeCode" codeListValue="creation"/>
+											</cit:dateType>
+										</cit:CI_Date>
+									</cit:date>
+								</cit:CI_Citation>
+							</mcc:authority>
+
+							<mcc:code>
+								<!-- Value that uniquely identifies the referenced resource. If it is a permanent URI then use
+								gmx:Anchor instead of gco:CharacterString-->
+								<gco:CharacterString>{{uuid to acquisition metadata}}</gco:CharacterString>
+							</mcc:code>
+
+						</mcc:MD_Identifier>
+					</cit:identifier>
+				</cit:CI_Citation>
+			</mri:citation>
+
+			<!--Abstract for the dataset. This is not a scientific abstract. Describe the contents of the
+					data/resource using plain language-->
+			<mri:abstract>
+				<gco:CharacterString>{{Not a scientific abstract. Describe the contents of the data/resource using plain language. Don't include URLs}}</gco:CharacterString>
+			</mri:abstract>
+
+			<!--Optional statement of why the data were collected to provide content to the dataset-->
+			<mri:purpose>
+				<gco:CharacterString>{{optional statement of WHY data were collected}}</gco:CharacterString>
+			</mri:purpose>
+
+			<mri:credit>
+				<gco:CharacterString>{{Enter names of contributors here.}}</gco:CharacterString>
+			</mri:credit>
+
+			<!-->Status of the resource. Most common status values are 'completed', 'ongoing', 'planned', or 'underDevelopment'<-->
+			<mri:status>
+				<mcc:MD_ProgressCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="{{code}}">{{code}}</mcc:MD_ProgressCode>
+			</mri:status>
+
+			<!-- Individuals and/or organizations available for questions about the resource -->
+
+			<mri:pointOfContact>
+				<cit:CI_Responsibility>
+					<cit:role>
+						<cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</cit:CI_RoleCode>
+					</cit:role>
+					<cit:party>
+						<cit:CI_Organisation>
+							<cit:name>
+								<gco:CharacterString>{{Organization Name}}</gco:CharacterString>
+							</cit:name>
+							<cit:contactInfo>
+								<cit:CI_Contact>
+									<cit:phone>
+										<cit:CI_Telephone>
+											<cit:number>
+												<!-- An “internationalized” telephone number as specified in ITU-T Recommendation E.123 Clause 2. -->
+												<gco:CharacterString>{{Telephone Number of Organization}}</gco:CharacterString>
+											</cit:number>
+										</cit:CI_Telephone>
+									</cit:phone>
+									<cit:address>
+										<cit:CI_Address>
+											<cit:deliveryPoint>
+												<gco:CharacterString>{{Building, Room, or other Relevant Information needed for Correspondence Address}}</gco:CharacterString>
+											</cit:deliveryPoint>
+											<cit:deliveryPoint>
+												<gco:CharacterString>{{Street Address of Organization}}</gco:CharacterString>
+											</cit:deliveryPoint>
+											<cit:city>
+												<gco:CharacterString>{{City where Organization is Located}}</gco:CharacterString>
+											</cit:city>
+											<cit:administrativeArea>
+												<gco:CharacterString>{{State where Organization is Located}}</gco:CharacterString>
+											</cit:administrativeArea>
+											<cit:postalCode>
+												<gco:CharacterString>{{Postal Code for Organization}}</gco:CharacterString>
+											</cit:postalCode>
+											<cit:country>
+												<gco:CharacterString>{{Country where Organization is Located}}</gco:CharacterString>
+											</cit:country>
+											<cit:electronicMailAddress>
+												<gco:CharacterString>{{example@email.com}}</gco:CharacterString>
+											</cit:electronicMailAddress>
+										</cit:CI_Address>
+									</cit:address>
+
+									<cit:onlineResource>
+										<cit:CI_OnlineResource>
+											<cit:linkage>
+												<gco:CharacterString>{{Web address for Organization's data portal or repository}}</gco:CharacterString>
+											</cit:linkage>
+											<cit:name>
+												<gco:CharacterString>{{Name of Organization's data portal or repository}}</gco:CharacterString>
+											</cit:name>
+											<cit:description>
+												<gco:CharacterString>{{Description pf Organization's data portal or repository}}</gco:CharacterString>
+											</cit:description>
+											<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_OnLineFunctionCode.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+											</cit:function>
+										</cit:CI_OnlineResource>
+									</cit:onlineResource>
+								</cit:CI_Contact>
+							</cit:contactInfo>
+						</cit:CI_Organisation>
+					</cit:party>
+				</cit:CI_Responsibility>
+			</mri:pointOfContact>
+
+			<!--Keywords of the dataset for discovery-->
+
+			<!--GCMD Keywords -->
+			<!-- See https://gcmdservices.gsfc.nasa.gov/static/kms/ for a complete list of "Science" keywords -->
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Earth Science &gt; Topic &gt; Term &gt; Variable_Level_1}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Science Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Science Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2020-01-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>9.1</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+															are structured, used and accessed. It also provides information on how users can participate
+															in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+
+			<!--GCMD Place Keywords-->
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Location_Category > Location_Type > Location_Subregion1}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Science Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Science Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2020-01-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>9.1</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+			<!--Platform keywords-->
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="platform">platform</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Science Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Science Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2020-01-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>9.1</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+			<!--ICES Keywords-->
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Preferred Label}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="platform">platform</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="SeaDataNet Ship and Platform Codes">
+						<cit:CI_Citation uuid="3418d56c-ad92-4fe4-88e8-8fd0d1aa2d0b">
+							<cit:title>
+								<gco:CharacterString>International Council for the Exploration of the Sea/SeaDataNet (ICES/SDN) Ship Codes</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date gco:nilReason="unknown"/>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility>
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>International Council for the Exploration of the Sea (ICES) · Conseil International pour l'Exploration de la Mer (CIEM)</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://data.ices.dk/Reports/ShipC.aspx</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>ICES/SDN Ship Codes</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString/>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+			<!--GCMD instrument keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="instrument">instrument</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Instrument Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Instrument Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2023-06-16</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>9.1</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!--GCMD Project Keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="project">project</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Instrument Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Project Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2023-06-15</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>16.3</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!--GCMD Data Center / Provider Keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="dataCenter">dataCenter</mri:MD_KeywordTypeCode>
+						<!--work on this -->
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Instrument Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Instrument Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2023-06-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>16.3</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!--GCMD Horizontal Data Resolution Keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="dataResolution">dataResolution</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Instrument Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Instrument Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2023-06-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>16.3</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!--GCMD Vertical Resolution Keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="dataResolution">dataResolution</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Instrument Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Instrument Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2023-06-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>16.3</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!--GCMD Temporal Resolution Keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{Short_Name > Long_Name}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="dataResolution">dataResolution</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName xlink:title="GCMD Instrument Keywords">
+						<cit:CI_Citation uuid="227737d0-428b-11df-9879-0800200c9a66">
+							<cit:title>
+								<gco:CharacterString>Global Change Master Directory (GCMD) Instrument Keywords</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2023-06-09</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>16.3</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility uuid="1edb41d0-428a-11df-9879-0800200c9a66">
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>NASA Goddard Space Flight Center, Earth Science Data and Information System</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>https://earthdata.nasa.gov/earth-observation-data/find-data/idn/gcmd-keywords</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>Global Change Master Directory (GCMD) Keywords</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>The information provided on this page seeks to define how the GCMD Keywords
+																	are structured, used and accessed. It also provides information on how users can participate
+																	in the further development of the keywords.</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!--General Keywords-->
+
+			<mri:descriptiveKeywords>
+				<mri:MD_Keywords>
+					<mri:keyword>
+						<gco:CharacterString>{{keyword}}</gco:CharacterString>
+					</mri:keyword>
+					<mri:type>
+						<mri:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="{{code}}">{{code}}</mri:MD_KeywordTypeCode>
+					</mri:type>
+					<mri:thesaurusName>
+						<cit:CI_Citation>
+							<cit:title>
+								<gco:CharacterString>{{thesaurus name}}</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:Date>2000-01-01</gco:Date>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="{{code}}">{{code}}</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition>
+								<gco:CharacterString>{{edition number}}</gco:CharacterString>
+							</cit:edition>
+							<cit:citedResponsibleParty>
+								<cit:CI_Responsibility>
+									<cit:role>
+										<cit:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="{{code}}">{{code}}</cit:CI_RoleCode>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>{{Organization responsible for the thesaurus}}</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>{{URL to thesaurus}}</gco:CharacterString>
+												</cit:linkage>
+												<cit:name>
+												<gco:CharacterString>{{URL name}}</gco:CharacterString>
+												</cit:name>
+												<cit:description>
+												<gco:CharacterString>{{URL description}}</gco:CharacterString>
+												</cit:description>
+												<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+												</cit:function>
+												</cit:CI_OnlineResource>
+												</cit:onlineResource>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</cit:citedResponsibleParty>
+						</cit:CI_Citation>
+					</mri:thesaurusName>
+				</mri:MD_Keywords>
+			</mri:descriptiveKeywords>
+
+
+			<!-- Legal Constraints: Regarding data access, the data content is subject to the provisions of the US Privacy Act. Regarding data use, it is subject to both provisions of the 
+					US Privacy Act and additional intellectual property rights. 
+					You can also use LegalConstraints section for security classification
+					Example sectino for NOAA/NCEI Legal constraints-->
+
+			<mri:resourceConstraints>
+				<mco:MD_LegalConstraints>
+					<mco:accessConstraints>
+						<mco:MD_RestrictionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_RestrictionCode.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</mco:MD_RestrictionCode>
+					</mco:accessConstraints>
+					<mco:useConstraints>
+						<mco:MD_RestrictionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_RestrictionCode.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</mco:MD_RestrictionCode>
+					</mco:useConstraints>
+					<mco:otherConstraints>
+						<gco:CharacterString>Distribution liability: NOAA and NCEI make no warranty,
+							expressed or implied, regarding these data, nor does the fact of
+							distribution constitute such a warranty. NOAA and NCEI cannot assume
+							liability for any damages caused by any errors or omissions in these
+							data. If appropriate, NCEI can only certify that the data it distributes
+							are an authentic copy of the records that were accepted for inclusion in
+							the NCEI archives.							
+						</gco:CharacterString>
+					</mco:otherConstraints>
+					<mco:otherConstraints>
+						<gco:CharacterString>Use liability: NOAA and NCEI cannot provide any warranty as to the accuracy, reliability, or completeness of furnished
+								data. Users assume responsibility to determine the usability of these data. The user is responsible for the results of any application of this
+								data for other than its intended purpose.</gco:CharacterString>
+					</mco:otherConstraints>
+				</mco:MD_LegalConstraints>
+			</mri:resourceConstraints>
+		</mri:MD_DataIdentification>
+	</mdb:identificationInfo>
+	
+	
+	<!-- Data quality section. This is a different standard but defined in the namespaces at the top of 
+		the metadata file. ISO 19157. -->
+	
+	<mdb:dataQualityInfo>
+		<mdq:DQ_DataQuality>
+			<mdq:scope>
+				<mcc:MD_Scope>
+					<mcc:level>
+						<!-- The specific data to whice the data qulaity information applies. In this example it is the dataset -->
+						<mcc:MD_ScopeCode codeList="" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+					</mcc:level>
+				</mcc:MD_Scope>
+			</mdq:scope>
+			<mdq:report>
+				<mdq:DQ_DomainConsistency>
+					
+					<!-- Result is manadatory. Types can be ConformanceResult, DescriptiveResult,
+                            QuantitativeResult, or Coverage Result -->
+					
+					<mdq:result>
+						<!--Brief description of the data quality result. Mandatory element -->
+						<mdq:DQ_DescriptiveResult>
+							<mdq:statement>
+								<gco:CharacterString>{{A json file is created that records detected nav spikes. Turns are also auto-detected
+									and removed from the file formats that are produced.}}</gco:CharacterString>
+							</mdq:statement>
+						</mdq:DQ_DescriptiveResult>
+					</mdq:result>
+				</mdq:DQ_DomainConsistency>
+			</mdq:report>
+		</mdq:DQ_DataQuality>
+	</mdb:dataQualityInfo>
+	
+	
+	<!-- Lineage section -->
+	<mdb:resourceLineage>
+		<mrl:LI_Lineage>
+			<mrl:processStep>
+				<mrl:LE_ProcessStep>
+					<mrl:description>
+						<gco:CharacterString>{{General description of events in the development of the resource}}</gco:CharacterString>
+					</mrl:description>
+					<mrl:rationale/>
+					<!--the date and time when the process was completed -->
+					<mrl:output>
+						<mrl:LE_Source>
+							<mrl:description>
+								<gco:CharacterString>{{Description of the product generated as a result of the process step}}</gco:CharacterString>
+							</mrl:description>
+							<!--Identifier of Acquisition Metadata-->
+							<mrl:sourceMetadata>
+								<cit:CI_Citation>
+									<cit:title>
+										<gco:CharacterString>{{name of cited resource}}</gco:CharacterString>
+									</cit:title>
+									<cit:identifier>
+										<mcc:MD_Identifier>
+											<mcc:code>
+												<gco:CharacterString>
+													{{uuid of Aquisition Metadata}}
+												</gco:CharacterString>
+											</mcc:code>
+										</mcc:MD_Identifier>
+									</cit:identifier>
+								</cit:CI_Citation>
+							</mrl:sourceMetadata>
+						</mrl:LE_Source>
+					</mrl:output>					
+				</mrl:LE_ProcessStep>
+			</mrl:processStep>
+		</mrl:LI_Lineage>
+	</mdb:resourceLineage>
+
+
+	<!--Mission Information such as platform, instrument, and mission events -->
+
+	<mdb:acquisitionInformation>
+		<mac:MI_AcquisitionInformation>
+			<mac:scope>
+				<mcc:MD_Scope>
+					<mcc:level>
+						<mcc:MD_ScopeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ScopeCode.xml#MD_ScopeCode" codeListValue="MD_ScopeCode">dataset</mcc:MD_ScopeCode>
+					</mcc:level>
+					<mcc:extent>
+						<gex:EX_Extent>
+							<gex:description>
+								<gco:CharacterString>{{Region of where Data was collected (ex. Mediterranean Sea, Gulf of Mexico)}}</gco:CharacterString>
+							</gex:description>
+						</gex:EX_Extent>
+					</mcc:extent>
+					<mcc:levelDescription>
+						<mcc:MD_ScopeDescription>
+							<mcc:other>
+								<gco:CharacterString>{{Description of dataset and platform used to collect it}}</gco:CharacterString>
+							</mcc:other>
+						</mcc:MD_ScopeDescription>
+					</mcc:levelDescription>
+				</mcc:MD_Scope>
+			</mac:scope>
+
+			<!--Instrument Information-->
+			<mac:instrument>
+				<mac:MI_Instrument id="instrumentIdentifier">
+					<mac:identifier>
+						<mcc:MD_Identifier>
+							<mcc:code>
+								<gco:CharacterString>{{Character String used to Identify Instrument}}</gco:CharacterString>
+							</mcc:code>
+						</mcc:MD_Identifier>
+					</mac:identifier>
+					<mac:type>
+						<gco:CharacterString>{{Manufacturer and Type of Instrument}}</gco:CharacterString>
+					</mac:type>
+					<mac:description>
+						<gco:CharacterString>{{Description of Instrument (ex. side scan sonar)}}</gco:CharacterString>
+					</mac:description>
+					<mac:mountedOn xlink:href="#platformIdentifier"/>
+					<mac:otherPropertyType/>
+					<mac:otherProperty/>
+					<mac:sensor xlink:href="#sensorIdentifier"/>
+					<mac:history>
+						<mac:MI_InstrumentationEventList>
+							<mac:citation>
+								<cit:CI_Citation>
+									<cit:title>
+										<gco:CharacterString>{{Survey Event Title}}</gco:CharacterString>
+									</cit:title>
+									<cit:onlineResource>
+										<cit:CI_OnlineResource>
+											<cit:linkage>
+												<gco:CharacterString>{{Link to Mission report}}</gco:CharacterString>
+											</cit:linkage>
+										</cit:CI_OnlineResource>
+									</cit:onlineResource>
+								</cit:CI_Citation>
+							</mac:citation>
+							<mac:description>
+								<gco:CharacterString>{{Description of event which triggered instrument (ex. reached pre-determined survey depth)}}</gco:CharacterString>
+							</mac:description>
+							<mac:locale>
+								<lan:PT_Locale>
+									<lan:language>
+										<lan:LanguageCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+									</lan:language>
+									<lan:characterEncoding>
+										<lan:MD_CharacterSetCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+									</lan:characterEncoding>
+								</lan:PT_Locale>
+							</mac:locale>
+							<mac:metadataConstraints/>
+							<mac:instrumentationEvent/>
+						</mac:MI_InstrumentationEventList>
+					</mac:history>
+				</mac:MI_Instrument>
+			</mac:instrument>
+
+			<!--Mission Information -->
+			<mac:operation>
+				<mac:MI_Operation id="operationIdentifier">
+					<mac:description>
+						<gco:CharacterString>{{Text description of the mission and the objectives of that mission}}
+						</gco:CharacterString>
+					</mac:description>
+					<mac:identifier>
+						<mcc:MD_Identifier>
+							<mcc:code>
+								<gco:CharacterString>{{Assigned Mission/Survey Identifier}}
+								</gco:CharacterString>
+							</mcc:code>
+						</mcc:MD_Identifier>
+					</mac:identifier>
+					<mac:status>
+						<mcc:MD_ProgressCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ProgressCode.xml#MD_ProgressCode" codeListValue="completed"/>
+					</mac:status>
+					<mac:type>
+						<mac:MI_OperationTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/mac/MI_OperationTypeCode.xml#MI_OperationTypeCode" codeListValue="real"/>
+					</mac:type>
+					<mac:parentOperation/>
+					<mac:childOperation/>
+
+					<!--Platform in mission -->
+					<mac:platform>
+						<mac:MI_Platform>
+							<mac:identifier>
+								<mcc:MD_Identifier id="platformIdentifier">
+									<mcc:code>
+										<gco:CharacterString>{{Platform Identifier}}</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</mac:identifier>
+							<mac:description>
+								<gco:CharacterString>{{Platform Description or Make and Model (ex.REMUS 600)}}</gco:CharacterString>
+							</mac:description>
+							<mac:sponsor>
+								<cit:CI_Responsibility id="sponsorOrg">
+									<cit:role>
+										<cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="pointOfContact"/>
+									</cit:role>
+									<cit:party>
+										<cit:CI_Organisation>
+											<cit:name>
+												<gco:CharacterString>{{Organization which sponsored or funded Mission}}</gco:CharacterString>
+											</cit:name>
+											<cit:contactInfo>
+												<cit:CI_Contact>
+												<cit:address>
+												<cit:CI_Address>
+												<cit:electronicMailAddress>
+												<gco:CharacterString>{{sample@pointOfContact.email}}</gco:CharacterString>
+												</cit:electronicMailAddress>
+												</cit:CI_Address>
+												</cit:address>
+												</cit:CI_Contact>
+											</cit:contactInfo>
+										</cit:CI_Organisation>
+									</cit:party>
+								</cit:CI_Responsibility>
+							</mac:sponsor>
+							<mac:instrument xlink:href="#instrumentIdentifier"/>
+							<mac:otherPropertyType/>
+							<mac:otherProperty/>
+							<mac:history>
+								<mac:MI_InstrumentationEventList>
+									<mac:citation/>
+									<mac:description/>
+									<mac:locale/>
+									<mac:metadataConstraints/>
+									<mac:instrumentationEvent/>
+								</mac:MI_InstrumentationEventList>
+							</mac:history>
+						</mac:MI_Platform>
+					</mac:platform>
+				</mac:MI_Operation>
+			</mac:operation>
+
+			<!-- Object(s) or area(s) of interst to be sensed -->
+
+			<mac:objective>
+				<mac:MI_Objective id="objectiveIdentifier">
+					<mac:identifier>
+						<mcc:MD_Identifier>
+							<mcc:code>
+								<gco:CharacterString>{{Value is used to identify the objective}}</gco:CharacterString>
+							</mcc:code>
+						</mcc:MD_Identifier>
+					</mac:identifier>
+					<mac:objectiveOccurence>
+						<!--Identification of a signifcant collection point within an operattion -->
+						<mac:MI_Event id="eventIdentifier">
+							<mac:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>{{Initial Event Identifier}}</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</mac:identifier>
+							<mac:trigger>
+								<mac:MI_TriggerCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_TriggerCode" codeListValue="automatic">automatic</mac:MI_TriggerCode>
+							</mac:trigger>
+							<mac:context>
+								<mac:MI_ContextCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_ContextCode" codeListValue="acquisition">acquisition</mac:MI_ContextCode>
+							</mac:context>
+							<mac:sequence>
+								<mac:MI_SequenceCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_SequenceCode" codeListValue="start">start</mac:MI_SequenceCode>
+							</mac:sequence>
+							<mac:time>
+								<gco:DateTime>2000-01-01T00:00:00</gco:DateTime>
+							</mac:time>
+							<mac:relatedPass xlink:href="objectivePassIdentifier"/>
+							<mac:relatedSensor xlink:href="sensorIdentifier"/>
+							<mac:expectedObjective xlink:href="objectiveIdentifier"/>
+						</mac:MI_Event>
+					</mac:objectiveOccurence>
+				</mac:MI_Objective>
+			</mac:objective>
+		</mac:MI_AcquisitionInformation>
+	</mdb:acquisitionInformation>
+
+</mdb:MD_Metadata>
+
