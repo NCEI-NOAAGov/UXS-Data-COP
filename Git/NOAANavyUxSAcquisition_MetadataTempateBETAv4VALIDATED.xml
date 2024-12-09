@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+======================================================================
+	UxS METADATA CURATION TEMPLATE, January 2024 BETA VERSION
+	
+	This is the XML template for NOAA/Navy UxS metadata conforming the ISO 19115-3:2016(E) metadata standards. 
+	It also utilized ISO/FDIS 19157:2013(E)
+
+	This template is modified for acquisition metadata.
+
+    Example content is provided within this template and should be replaced with actual content for the data that are 
+    being documented. 
+
+    Comments are provided to ease readability.
+
+    Example content will be within {{curly braces}}.
+	Fields without comments and without brachets -{{example}}- contain default values. Not every sensor type is listed 
+	in this template.
+	This is a fully validated template. Dates are not in {{example}} form but in 2000-01-01T00:00:00Z as default. 
+	Please check your dates if you are using this template for your data.
+
+	Authors:
+	For further information about this template, please contact Jennifer Blue
+			DOD/USN/CNMOC 
+			Email: METOC_Feedback@us.navy.mil
+	OR 
+	
+	Katharine Weathers
+			DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce 
+			E-mail: ncei.uxs.data@noaa.gov				
+				
+
+	Distribution Liability:
+		NOAA makes no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. 
+		NOAA cannot assume liability for any damages caused by any errors or omissions in these templates.
+
+	Use Constraints:
+		The user is responsible for the results of any application of these templates for other than its
+		intended purpose. These templates cannot guarantee valid output. Additional editing
+		may need to be done in order to have valid records.
+
+	Revisions:
+
+-->
+<mdb:MD_Metadata xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+	xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+	xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+	xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+	xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+	xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+	xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+	xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+	xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
+	xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+	xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+	xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+	xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0"
+	xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+	xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+	xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
+	xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
+	xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+	xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
+	xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
+	xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
+	xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
+	xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
+	xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+	xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sml="https://www.opengis.net/sensorml/2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml http://schemas.opengis.net/gml/3.2.1/gml.xsd
+	http://standards.iso.org/iso/19115/-3/mdb/2.0 http://standards.iso.org/iso/19115/-3/mdb/2.0/mdb.xsd 
+	http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt.xsd
+	http://standards.iso.org/iso/19115/-3/cat/1.0 http://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd
+	http://standards.iso.org/iso/19115/-3/cit/2.0 http://standards.iso.org/iso/19115/-3/cit/2.0/cit.xsd
+	http://standards.iso.org/iso/19115/-3/gcx/1.0 http://standards.iso.org/iso/19115/-3/gcx/1.0/gcx.xsd
+	http://standards.iso.org/iso/19115/-3/gex/1.0 http://standards.iso.org/iso/19115/-3/gex/1.0/gex.xsd
+	http://standards.iso.org/iso/19115/-3/lan/1.0 http://standards.iso.org/iso/19115/-3/lan/1.0/lan.xsd
+	http://standards.iso.org/iso/19115/-3/srv/2.0 http://standards.iso.org/iso/19115/-3/srv/2.0/srv.xsd
+	http://standards.iso.org/iso/19115/-3/mas/1.0 http://standards.iso.org/iso/19115/-3/mas/1.0/mas.xsd 
+	http://standards.iso.org/iso/19115/-3/mcc/1.0 http://standards.iso.org/iso/19115/-3/mcc/1.0/mcc.xsd
+	http://standards.iso.org/iso/19115/-3/mco/1.0 http://standards.iso.org/iso/19115/-3/mco/1.0/mco.xsd
+	http://standards.iso.org/iso/19115/-3/mda/1.0 http://standards.iso.org/iso/19115/-3/mda/1.0/mda.xsd
+	http://standards.iso.org/iso/19115/-3/mds/1.0 http://standards.iso.org/iso/19115/-3/mds/1.0/mds.xsd
+	http://standards.iso.org/iso/19115/-3/mex/1.0 http://standards.iso.org/iso/19115/-3/mex/1.0/mex.xsd
+	http://standards.iso.org/iso/19115/-3/mmi/1.0 http://standards.iso.org/iso/19115/-3/mmi/1.0/mmi.xsd
+	http://standards.iso.org/iso/19115/-3/mpc/1.0 http://standards.iso.org/iso/19115/-3/mpc/1.0/mpc.xsd
+	http://standards.iso.org/iso/19115/-3/mrc/1.0 http://standards.iso.org/iso/19115/-3/mrc/1.0/mrc.xsd
+	http://standards.iso.org/iso/19115/-3/mrd/1.0 http://standards.iso.org/iso/19115/-3/mrd/1.0/mrd.xsd
+	http://standards.iso.org/iso/19115/-3/mri/1.0 http://standards.iso.org/iso/19115/-3/mri/1.0/mri.xsd
+	http://standards.iso.org/iso/19115/-3/mrl/1.0 http://standards.iso.org/iso/19115/-3/mrl/1.0/mrl.xsd
+	http://standards.iso.org/iso/19115/-3/mrs/1.0 http://standards.iso.org/iso/19115/-3/mrs/1.0/mrs.xsd
+	http://standards.iso.org/iso/19115/-3/msr/1.0 http://standards.iso.org/iso/19115/-3/msr/2.0/msr.xsd
+	http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd
+	http://standards.iso.org/iso/19115/-3/mac/1.0 http://standards.iso.org/iso/19115/-3/mac/1.0/mac.xsd 
+	http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd
+	http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd 
+	http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd
+	http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd
+	">
+
+	<mdb:metadataIdentifier>
+		<mcc:MD_Identifier>
+			<mcc:code>
+				<!-- For identification of the metadata record, use of UUIDs are recommended. 
+					This identifier string will be different from the File Identifier for the 
+					dataset. -->
+				<gco:CharacterString>{{Unique Identifier Assigned to Metadata Record}}</gco:CharacterString>
+			</mcc:code>
+		</mcc:MD_Identifier>
+	</mdb:metadataIdentifier>
+	<!-- Text Locale: It is mandatory to explicitly specify the "locale" of all string-values used in this 
+		metadata record. The default for this template is U.S. English using the UTF-8 character encoding 
+		for specifying string-values. However other languages, country-specific language localizations, 
+		and character sets may be employed. -->
+	<mdb:defaultLocale>
+		<lan:PT_Locale>
+			<lan:language>
+				<lan:LanguageCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+			</lan:language>
+			<lan:characterEncoding>
+				<lan:MD_CharacterSetCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+			</lan:characterEncoding>
+		</lan:PT_Locale>
+	</mdb:defaultLocale>
+
+	<!-- The categories of data represented in the resource being described are specified by an ISO-registered 
+		codelist. For this example, the default for this template is a dataset, but additional scopes might apply to more complex 
+		resources. -->
+	<mdb:metadataScope>
+		<mdb:MD_MetadataScope>
+			<mdb:resourceScope>
+				<mcc:MD_ScopeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ScopeCode.xml#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+			</mdb:resourceScope>
+			<mdb:name>
+				<gco:CharacterString>{{descriptive text describing dataset and how quantitative values are stored or represented}}</gco:CharacterString>
+			</mdb:name>
+		</mdb:MD_MetadataScope>
+	</mdb:metadataScope>
+
+	<!-- Resource Metadata Contact: This is the PREPARER of this metadata record. This can be an organization or person. 
+		There can be more information added to the contact, including phone, and address. Change as needed.-->
+
+	<mdb:contact>
+		<cit:CI_Responsibility>
+			<cit:role>
+				<cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</cit:CI_RoleCode>
+			</cit:role>
+			<cit:party>
+				<cit:CI_Organisation>
+					<cit:name>
+						<gco:CharacterString>{{Name of Organization}}</gco:CharacterString>
+					</cit:name>
+					<cit:contactInfo>
+						<cit:CI_Contact>
+							<cit:phone>
+								<cit:CI_Telephone>
+									<cit:number>
+										<!-- An “internationalized” telephone number as specified in ITU-T 
+											Recommendation E.123 Clause 2. -->
+										<gco:CharacterString>{{Telephone Number of Organization}}
+										</gco:CharacterString>
+									</cit:number>
+								</cit:CI_Telephone>
+							</cit:phone>
+							<cit:address>
+								<cit:CI_Address>
+									<cit:deliveryPoint>
+										<gco:CharacterString>{{Building, Room, or other Relevant Information needed for Correspondence Address}}</gco:CharacterString>
+									</cit:deliveryPoint>
+									<cit:deliveryPoint>
+										<gco:CharacterString>{{Street Address of Organization}}</gco:CharacterString>
+									</cit:deliveryPoint>
+									<cit:city>
+										<gco:CharacterString>{{City where Organization is Located}}</gco:CharacterString>
+									</cit:city>
+									<cit:administrativeArea>
+										<gco:CharacterString>{{State where Organization is Located}}</gco:CharacterString>
+									</cit:administrativeArea>
+									<cit:postalCode>
+										<gco:CharacterString>{{Postal Code for Organization}}</gco:CharacterString>
+									</cit:postalCode>
+									<cit:country>
+										<gco:CharacterString>{{Country of Organization}}</gco:CharacterString>
+									</cit:country>
+									<cit:electronicMailAddress>
+										<gco:CharacterString>{{example@email.com}}</gco:CharacterString>
+									</cit:electronicMailAddress>
+								</cit:CI_Address>
+							</cit:address>
+							<!-- optional but recommended -->
+							<cit:onlineResource>
+								<cit:CI_OnlineResource>
+									<cit:linkage>
+										<gco:CharacterString>{{Web address for Organization's data portal or repository}}</gco:CharacterString>
+									</cit:linkage>
+									<cit:name>
+										<gco:CharacterString>{{Name of Organization's data portal or repository}}</gco:CharacterString>
+									</cit:name>
+									<cit:description>
+										<gco:CharacterString>{{Description of Organization's data portal or repository}}</gco:CharacterString>
+									</cit:description>
+									<cit:function>
+										<cit:CI_OnLineFunctionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_OnLineFunctionCode.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+									</cit:function>
+								</cit:CI_OnlineResource>
+							</cit:onlineResource>
+						</cit:CI_Contact>
+					</cit:contactInfo>
+				</cit:CI_Organisation>
+			</cit:party>
+		</cit:CI_Responsibility>
+	</mdb:contact>
+
+	<!-- Resource Metadata Date and Time: This is the date and time that this metadata record was prepared 
+		(and its content known to be accurate). This format is based on automated capture from the platform/insturment,
+		however the data can be listed as YYYY-MM-DD-->
+	<mdb:dateInfo>
+		<cit:CI_Date>
+			<cit:date>
+				<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+			</cit:date>
+			<cit:dateType>
+				<cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_DateTypeCode.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+			</cit:dateType>
+		</cit:CI_Date>
+	</mdb:dateInfo>
+
+	<!-- Metadata Standard Reference: It is a Recommended Best Practice to use the full name of the metadata standard 
+		and its edition in order to eliminate ambiguity. This is the default for this template.-->
+
+	<mdb:metadataStandard>
+		<cit:CI_Citation>
+			<cit:title>
+				<gco:CharacterString>ISO 19115 Geographic Information - Metadata </gco:CharacterString>
+			</cit:title>
+			<cit:alternateTitle>
+				<gco:CharacterString>ISOTC211</gco:CharacterString>
+			</cit:alternateTitle>
+			<cit:edition>
+				<gco:CharacterString>2:2019/Amd 1:2022</gco:CharacterString>
+			</cit:edition>
+		</cit:CI_Citation>
+	</mdb:metadataStandard>
+
+	<!--If you have a spatial representation, you can add it in the section(s) below. There are two types of specialized grids 
+		in ISO. Georectified versus Georeferenceable.-->
+
+	<!-- Spatial Representation Information: The digital representation of spatial information in the dataset. The grid data in the resource has been georectified. 
+	Type of spatial representation info include MD_GridSpatialRepresentation, MD_Georectified, MD_Georeferenceable, MD_VectorSpatialRepresentation, MI_Georectified, MI_Georeferenceable
+    Georectified (regular) grids can be described in the spatialReprentationInfo. Ex. If the lat and lon spacing is uniform in a netCDF or HDF5, the grid could be described as georectifed.
+    Georeferenced (irregular) grids can be described in MD_Georeferenceable. If data are irregularly spaced and can be geolocated using an internal (within the data) coordinate system they
+    georeferenced data. An example would be using a map projection to determine where every point of an aerial photo is located on the surface of Earth.-->
+
+	<mdb:spatialRepresentationInfo>
+		<msr:MD_Georectified>
+			<msr:numberOfDimensions>
+				<gco:Integer><!--number of independent spatial-temporal axes, x, y, or z-->99</gco:Integer>
+			</msr:numberOfDimensions>
+			<msr:cellGeometry>
+				<msr:MD_CellGeometryCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_CellGeometryCode.xml#MD_CellGeometryCode?" codeListValue="grid"/>
+			</msr:cellGeometry>
+
+			<!--Are parameters for transformation between image coordinates and geographic or map coordinates available-->
+			<msr:transformationParameterAvailability>
+				<gco:Boolean><!--true or false-->true</gco:Boolean>
+			</msr:transformationParameterAvailability>
+
+			<!--Are geographic position points available to test the accuracy of the groreferenced grid data-->
+			<msr:checkPointAvailability>
+				<gco:Boolean><!--true or false-->true</gco:Boolean>
+			</msr:checkPointAvailability>
+
+			<!--Corner Points-->
+			<msr:cornerPoints>
+				<!-- lat DD lon DD is preferred format-->
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-upper-left"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+			<msr:cornerPoints>
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-upper-right"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+			<msr:cornerPoints>
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-lower-right"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+			<msr:cornerPoints>
+				<ns1:Point xmlns:ns1="http://www.opengis.net/gml/3.2">
+					<ns1:identifier codeSpace="cornerPoint-lower-left"/>
+					<ns1:coordinates>{{99.99 99.99}}</ns1:coordinates>
+				</ns1:Point>
+			</msr:cornerPoints>
+
+			<!--Point in a pixel corresponding to the Earth location of the pixel-->
+			<msr:pointInPixel>
+				<!-- Orientation of Pixel Coordinates (ex.lower left, center, etc) -->
+				<msr:MD_PixelOrientationCode>lowerLeft</msr:MD_PixelOrientationCode>
+			</msr:pointInPixel>
+		</msr:MD_Georectified>
+	</mdb:spatialRepresentationInfo>
+
+	<!-- ENTER REFERENCE SYSTEM INFORMATION AS NEEDED. -->
+
+	<mdb:referenceSystemInfo>
+		<mrs:MD_ReferenceSystem>
+			<mrs:referenceSystemIdentifier>
+				<!-- Both the mcc:code and mcc:codeSpace shall be specified. -->
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>WGS84E_2D</gco:CharacterString>
+					</mcc:code>
+					<mcc:codeSpace>
+						<gco:CharacterString>http://standards.iso.org/iso/19115/-3/mrs/1.0
+						</gco:CharacterString>
+					</mcc:codeSpace>
+				</mcc:MD_Identifier>
+			</mrs:referenceSystemIdentifier>
+			<mrs:referenceSystemType>
+				<mrs:MD_ReferenceSystemTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ReferenceSystemTypeCode.xml#MD_ReferenceSystemTypeCode" codeListValue="geodeticGeographic2D"/>
+			</mrs:referenceSystemType>
+		</mrs:MD_ReferenceSystem>
+	</mdb:referenceSystemInfo>
+
+	<!-- Resource Identification Information: The metadata specifically about 
+		the Data Content. It may include thematic and spatio-temporal extent information 
+		as well as information related to provenance. -->
+
+	<mdb:identificationInfo>
+		<mri:MD_DataIdentification>
+
+			<mri:citation>
+				<cit:CI_Citation>
+					<!--title of dataset-->
+					<cit:title>
+						<gco:CharacterString>{{Title of dataset}}</gco:CharacterString>
+					</cit:title>
+
+					<!--alternate title, can be file name etc-->
+					<cit:alternateTitle>
+						<gco:CharacterString>{{alternate title}}</gco:CharacterString>
+					</cit:alternateTitle>
+
+					<!--date of data creation. If unknown, use gco:nilReason instead of gco:Date -->
+					<cit:date>
+						<cit:CI_Date>
+							<cit:date>
+								<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+							</cit:date>
+							<cit:dateType>
+								<cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_DateTypeCode.xml#CI_DateTypeCode" codeListValue="publication"/>
+							</cit:dateType>
+						</cit:CI_Date>
+					</cit:date>
+
+					<!-- Citation for resource. In this example citation to Entity which collected the data-->
+					<cit:identifier>
+						<mcc:MD_Identifier>
+							<mcc:authority>
+								<cit:CI_Citation>
+									<cit:title>
+										<gco:CharacterString>{{Aquisition (data collection) entity}}</gco:CharacterString>
+									</cit:title>
+									<cit:date>
+										<cit:CI_Date>
+											<cit:date>
+												<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+											</cit:date>
+											<cit:dateType>
+												<cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_DateTypeCode.xml#CI_DateTypeCode" codeListValue="creation"/>
+											</cit:dateType>
+										</cit:CI_Date>
+									</cit:date>
+								</cit:CI_Citation>
+							</mcc:authority>
+
+							<mcc:code>
+								<!-- Value that uniquely identifies the referenced resource. If it is a permanent URI then use
+								gmx:Anchor instead of gco:CharacterString-->
+								<gco:CharacterString>{{uuid to acquisition metadata}}</gco:CharacterString>
+							</mcc:code>
+
+						</mcc:MD_Identifier>
+					</cit:identifier>
+				</cit:CI_Citation>
+			</mri:citation>
+
+			<!--Abstract for the dataset. This is not a scientific abstract. Describe the purpose of collection-->
+			<mri:abstract>
+				<gco:CharacterString>{{Not a scientific abstract. Describe collection purpose.}}</gco:CharacterString>
+			</mri:abstract>
+
+			<!-- Individuals and/or organizations available for questions about the resource -->
+			<mri:pointOfContact>
+				<cit:CI_Responsibility>
+					<cit:role>
+						<cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</cit:CI_RoleCode>
+					</cit:role>
+					<cit:party>
+						<cit:CI_Organisation>
+							<cit:name>
+								<gco:CharacterString>{{Organization Name}}</gco:CharacterString>
+							</cit:name>
+							<cit:contactInfo>
+								<cit:CI_Contact>
+									<cit:phone>
+										<cit:CI_Telephone>
+											<cit:number>
+												<!-- An “internationalized” telephone number as specified in ITU-T Recommendation E.123 Clause 2. -->
+												<gco:CharacterString>{{Telephone Number of Organization}}</gco:CharacterString>
+											</cit:number>
+										</cit:CI_Telephone>
+									</cit:phone>
+									<cit:address>
+										<cit:CI_Address>
+											<cit:deliveryPoint>
+												<gco:CharacterString>{{Building, Room, or other Relevant Information needed for Correspondence Address}}</gco:CharacterString>
+											</cit:deliveryPoint>
+											<cit:deliveryPoint>
+												<gco:CharacterString>{{Street Address of Organization}}</gco:CharacterString>
+											</cit:deliveryPoint>
+											<cit:city>
+												<gco:CharacterString>{{City where Organization is Located}}</gco:CharacterString>
+											</cit:city>
+											<cit:administrativeArea>
+												<gco:CharacterString>{{State where Organization is Located}}</gco:CharacterString>
+											</cit:administrativeArea>
+											<cit:postalCode>
+												<gco:CharacterString>{{Postal Code for Organization}}</gco:CharacterString>
+											</cit:postalCode>
+											<cit:country>
+												<gco:CharacterString>{{Country where Organization is Located}}</gco:CharacterString>
+											</cit:country>
+											<cit:electronicMailAddress>
+												<gco:CharacterString>{{example@email.com}}</gco:CharacterString>
+											</cit:electronicMailAddress>
+										</cit:CI_Address>
+									</cit:address>
+
+									<cit:onlineResource>
+										<cit:CI_OnlineResource>
+											<cit:linkage>
+												<gco:CharacterString>{{Web address for Organization's data portal or repository}}</gco:CharacterString>
+											</cit:linkage>
+											<cit:name>
+												<gco:CharacterString>{{Name of Organization's data portal or repository}}</gco:CharacterString>
+											</cit:name>
+											<cit:description>
+												<gco:CharacterString>{{Description pf Organization's data portal or repository}}</gco:CharacterString>
+											</cit:description>
+											<cit:function>
+												<cit:CI_OnLineFunctionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/CI_OnLineFunctionCode.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
+											</cit:function>
+										</cit:CI_OnlineResource>
+									</cit:onlineResource>
+								</cit:CI_Contact>
+							</cit:contactInfo>
+						</cit:CI_Organisation>
+					</cit:party>
+				</cit:CI_Responsibility>
+			</mri:pointOfContact>
+
+
+			<!-- Security Constraints: This specifies any restrictions applicable to the data content itself.
+				In addition, the classification should be provided in MD_SecurityConstraints, which 	
+				would be interoperable with ISO 19115-1:2014 based systems. In this example, the data content 
+				is unclassified. -->
+			<mri:resourceConstraints>
+				<!-- Example for ISO191** only, does not contain CUI Markings -->
+				<mco:MD_SecurityConstraints>
+					<!-- The value for classification is specified by an ISO-registered codelist published at the URL in @codeList -->
+					<mco:classification>
+						<mco:MD_ClassificationCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ClassificationCode.xml#MD_ClassificationCode" codeListValue="limitedDistribution"/>
+					</mco:classification>
+					<mco:classificationSystem>
+						<gco:CharacterString>{{Classification System Used, (ex. USA)}}</gco:CharacterString>
+					</mco:classificationSystem>
+					<mco:handlingDescription>
+						<gco:CharacterString>{{Distibution or handling descriptions will be here, (ex. Distribution authorized to Department of Defense
+							and U.S. DoD contractors only. administrative or Operational Use, 22JULY2022. Other requests for this document shall be referred to
+							[Example Agency and contact information]}}
+						</gco:CharacterString>
+					</mco:handlingDescription>
+				</mco:MD_SecurityConstraints>
+			</mri:resourceConstraints>
+
+
+			<!-- Legal Constraints: Regarding data access, the data content is subject to the provisions of the US Privacy Act. Regarding data use, it is subject 
+					to both provisions of the US Privacy Act and additional intellectual property rights. -->
+			<mri:resourceConstraints>
+				<mco:MD_LegalConstraints>
+					<mco:accessConstraints>
+						<mco:MD_RestrictionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_RestrictionCode.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</mco:MD_RestrictionCode>
+					</mco:accessConstraints>
+					<mco:useConstraints>
+						<mco:MD_RestrictionCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_RestrictionCode.xml#MD_RestrictionCode" codeListValue="confidential">confidential</mco:MD_RestrictionCode>
+						<!-- confidential: not available to the public contains information that could be prejudicial to a commercial, industrial, or national interest -->
+					</mco:useConstraints>
+					<mco:otherConstraints>
+						<gco:CharacterString>Distribution liability: NOAA and NCEI make no warranty,
+							expressed or implied, regarding these data, nor does the fact of
+							distribution constitute such a warranty. NOAA and NCEI cannot assume
+							liability for any damages caused by any errors or omissions in these
+							data. If appropriate, NCEI can only certify that the data it distributes
+							are an authentic copy of the records that were accepted for inclusion in the NCEI archives.</gco:CharacterString>
+					</mco:otherConstraints>
+				</mco:MD_LegalConstraints>
+
+			</mri:resourceConstraints>
+		</mri:MD_DataIdentification>
+	</mdb:identificationInfo>
+
+
+	<!--Data Quality and Lineage -->
+	<mdb:dataQualityInfo>
+		<mdq:DQ_DataQuality>
+			<mdq:scope>
+				<!-- In this example we presume that the scope of this data quality specification encompasses the entire cell; therefore, the values of mcc:level and mcc:levelDescription 							
+					correspond to the mdb:resourceScope and mdb:name specified for the Metadata Scope - namely that the resource is a dataset representing a cell. -->
+				<mcc:MD_Scope>
+					<!-- The value for level is specified by a codelist published at the URL in @codeList -->
+					<mcc:level>
+						<mcc:MD_ScopeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ScopeCode.xml#MD_ScopeCode" codeListValue="dataset"/>
+					</mcc:level>
+					<mcc:levelDescription>
+						<mcc:MD_ScopeDescription>
+							<mcc:other>
+								<gco:CharacterString>cell</gco:CharacterString>
+							</mcc:other>
+						</mcc:MD_ScopeDescription>
+					</mcc:levelDescription>
+				</mcc:MD_Scope>
+			</mdq:scope>
+			<mdq:report>
+				<!--Gridded Data Positional Accuracy: Specifies the assessed accuracy of the geospatial contents of the data cell.-->
+				<mdq:DQ_GriddedDataPositionalAccuracy>
+					<mdq:result>
+						<mdq:DQ_QuantitativeResult>
+							<mdq:value>
+								<gco:Record>
+									<!-- The definition is specified by IHO quality measures published at the URL in @definition -->
+									<swe:Quantity
+										definition="https://iho.int/en/standards-and-specifications">
+										<swe:label>IHO Map Accuracy Standard</swe:label>
+										<swe:uom
+											xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"/>
+										<swe:value>50</swe:value>
+									</swe:Quantity>
+								</gco:Record>
+							</mdq:value>
+						</mdq:DQ_QuantitativeResult>
+					</mdq:result>
+				</mdq:DQ_GriddedDataPositionalAccuracy>
+			</mdq:report>
+			<mdq:report>
+				<!-- Data Absolute External Positional Accuracy: Specifies the vertical accuracy in meters. -->
+				<mdq:DQ_AbsoluteExternalPositionalAccuracy>
+					<mdq:result>
+						<mdq:DQ_QuantitativeResult>
+							<mdq:value>
+								<gco:Record>
+									<swe:Quantity
+										definition="https://iho.int/en/standards-and-specifications">
+										<swe:label>Absolute Linear Error at 90% Significance Level
+											of Biased Vertical Data (Alternative 2)</swe:label>
+										<swe:uom
+											xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"/>
+										<swe:value>30</swe:value>
+									</swe:Quantity>
+								</gco:Record>
+							</mdq:value>
+						</mdq:DQ_QuantitativeResult>
+					</mdq:result>
+				</mdq:DQ_AbsoluteExternalPositionalAccuracy>
+			</mdq:report>
+		</mdq:DQ_DataQuality>
+	</mdb:dataQualityInfo>
+
+
+	<!--Mission Information such as platform, instrument, and mission events -->
+
+	<mdb:acquisitionInformation>
+		<mac:MI_AcquisitionInformation>
+			<mac:scope>
+				<mcc:MD_Scope>
+					<mcc:level>
+						<mcc:MD_ScopeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ScopeCode.xml#MD_ScopeCode" codeListValue="MD_ScopeCode">Dataset</mcc:MD_ScopeCode>
+					</mcc:level>
+					<mcc:extent>
+						<gex:EX_Extent>
+							<gex:description>
+								<gco:CharacterString>{{Region of where Data was collected (ex. Mediterranean Sea, Gulf of Mexico)}}</gco:CharacterString>
+							</gex:description>
+						</gex:EX_Extent>
+					</mcc:extent>
+					<mcc:levelDescription>
+						<mcc:MD_ScopeDescription>
+							<mcc:other>
+								<gco:CharacterString>{{Description of dataset and platform used to collect it}}</gco:CharacterString>
+							</mcc:other>
+						</mcc:MD_ScopeDescription>
+					</mcc:levelDescription>
+				</mcc:MD_Scope>
+			</mac:scope>
+
+			<!--Mission Information -->
+			<mac:operation>
+				<mac:MI_Operation id="operationIdentifier">
+					<mac:description>
+						<gco:CharacterString>{{Text description of the mission and the objectives of that mission}}</gco:CharacterString>
+					</mac:description>
+					<mac:identifier>
+						<mcc:MD_Identifier>
+							<mcc:code>
+								<gco:CharacterString>{{Assigned Mission/Survey Identifier}}</gco:CharacterString>
+							</mcc:code>
+						</mcc:MD_Identifier>
+					</mac:identifier>
+					<mac:status>
+						<mcc:MD_ProgressCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/gml/MD_ProgressCode.xml#MD_ProgressCode" codeListValue="completed"/>
+					</mac:status>
+					<mac:type>
+						<mac:MI_OperationTypeCode codeList="https://standards.iso.org/iso/19115/resources/Codelists/mac/MI_OperationTypeCode.xml#MI_OperationTypeCode" codeListValue="real"/>
+					</mac:type>
+					<mac:parentOperation/>
+					<mac:childOperation/>
+
+					<mac:plan xlink:href="#planIdentifier"/>
+					<mac:significantEvent>
+						<mac:MI_Event id="eventIdentifier">
+							<mac:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>{{Initial Event Identifier}}
+										</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</mac:identifier>
+							<mac:trigger>
+								<mac:MI_TriggerCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_TriggerCode" codeListValue="automatic">automatic</mac:MI_TriggerCode>
+							</mac:trigger>
+							<mac:context>
+								<mac:MI_ContextCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_ContextCode" codeListValue="acquisition">acquisition</mac:MI_ContextCode>
+							</mac:context>
+							<mac:sequence>
+								<mac:MI_SequenceCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_SequenceCode" codeListValue="start">start</mac:MI_SequenceCode>
+							</mac:sequence>
+							<mac:time>
+								<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+							</mac:time>
+							<mac:relatedPass xlink:href="objectivePassIdentifier"/>
+							<mac:relatedSensor xlink:href="sensorIdentifier"/>
+							<mac:expectedObjective xlink:href="objectiveIdentifier"/>
+						</mac:MI_Event>
+					</mac:significantEvent>
+					<mac:otherPropertyType/>
+					<mac:otherProperty/>
+				</mac:MI_Operation>
+			</mac:operation>
+
+			<!--UxS Platform-->
+			<mac:platform>
+				<mac:MI_Platform>
+					<mac:identifier>
+						<mcc:MD_Identifier id="platformIdentifier">
+							<mcc:code>
+								<gco:CharacterString>{{Platform Identifier}}</gco:CharacterString>
+							</mcc:code>
+						</mcc:MD_Identifier>
+					</mac:identifier>
+					<mac:description>
+						<gco:CharacterString>{{Platform Description or Make and Model (ex. REMUS 600)}}</gco:CharacterString>
+					</mac:description>
+					<mac:sponsor>
+						<cit:CI_Responsibility id="sponsorOrg">
+							<cit:role>
+								<cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="pointOfContact"/>
+							</cit:role>
+							<cit:party>
+								<cit:CI_Organisation>
+									<cit:name>
+										<gco:CharacterString>{{Organization which sponsored or funded Mission}}</gco:CharacterString>
+									</cit:name>
+									<cit:contactInfo>
+										<cit:CI_Contact>
+											<cit:address>
+												<cit:CI_Address>
+												<cit:electronicMailAddress>
+												<gco:CharacterString>{{sample@pointOfContact.email}}</gco:CharacterString>
+												</cit:electronicMailAddress>
+												</cit:CI_Address>
+											</cit:address>
+										</cit:CI_Contact>
+									</cit:contactInfo>
+								</cit:CI_Organisation>
+							</cit:party>
+						</cit:CI_Responsibility>
+					</mac:sponsor>
+
+					<!--Instrument is repeatable -->
+					<mac:instrument>
+						<mac:MI_Instrument id="instrumentIdentifier">
+							<mac:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>{{Character String used to Identify Instrument ex. platform/vehicle serial number}}</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</mac:identifier>
+							<mac:type>
+								<gco:CharacterString>{{Manufacturer and Type of Instrument}}</gco:CharacterString>
+							</mac:type>
+							<mac:description>
+								<gco:CharacterString>{{Description of Instrument (ex. side scan sonar)}}</gco:CharacterString>
+							</mac:description>
+							<mac:mountedOn xlink:href="#platformIdentifier"/>
+							<mac:otherPropertyType>
+								<gco:RecordType xlink:href="http://schemas.opengis.net/sensorML/2.0/core.xsd#xpointer(//complexType[@name='ParameterListType'])">Sensor Markup Language ParameterList</gco:RecordType>
+							</mac:otherPropertyType>
+							<mac:otherProperty>
+								<gco:Record>
+									<!-- ================================================ -->
+									<!-- Inputs = Observed Properties -->
+									<!-- ================================================= -->
+									<!-- Example list of types of data collected based on an example sensor 
+	payload. For additional input types, refer to mmisw.org -->
+									<sml:inputs>
+										<sml:InputList>
+											<sml:input name="sea water temperature">
+												<sml:ObservableProperty
+												definition="https://mmisw.org/ont/cf/parameter/sea_water_temperature"
+												/>
+											</sml:input>
+										</sml:InputList>
+									</sml:inputs>
+									<!--Input is repeatable -->
+									<!--	EXAMPLES
+			<sml:input name="northward seawater velocity">
+				<sml:ObservableProperty
+					definition="https://mmisw.org/ont/cf/parameter/northward_sea_water_velocity"/>
+			</sml:input>
+			<sml:input name="eastward seawater velocity">
+				<sml:ObservableProperty
+					definition="https://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity"/>
+			</sml:input>
+			<sml:input name="sea water salinity">
+				<sml:ObservableProperty
+					definition="https://mmisw.org/ont/cf/parameter/sea_water_salinity"/>
+			</sml:input>
+			<sml:input name="depth">
+				<sml:ObservableProperty definition="http://mmisw.org/ont/cf/parameter/depth"/>
+			</sml:input>
+			<sml:input name="latitude">
+				<sml:ObservableProperty definition="https://mmisw.org/ont/cf/parameter/latitude"/>
+			</sml:input>
+			<sml:input name="longitude">
+				<sml:ObservableProperty definition="https://mmisw.org/ont/cf/parameter/longitude"/>
+			</sml:input>
+			-->
+									<!-- ================================================= -->
+									<!-- Outputs = Quantities -->
+									<!-- ================================================= -->
+									<sml:outputs>
+										<!-- Example list of sensor outputs created from a combination of the measurements 
+			listed in the inputs above. For additional output types, refer to mmisw.org -->
+										<sml:OutputList>
+											<sml:output name="physical oceanographic properties">
+												<swe:DataRecord>
+												<swe:field name="depth">
+												<swe:Quantity
+												definition="https://mmisw.org/ont/cf/parameter/depth">
+												<swe:label>Depth Below Surface</swe:label>
+												<swe:uom code="m"/>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="temperature">
+												<swe:Quantity
+												definition="https://mmisw.org/ont/cf/parameter/sea_water_temperature">
+												<swe:label>Sea Water Temperature</swe:label>
+												<swe:uom code="cel"/>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="salinity">
+												<swe:Quantity
+												definition="https://mmisw.org/ont/cf/parameter/sea_water_salinity">
+												<swe:label>Sea Water Salinity</swe:label>
+												<swe:uom code="ppt"/>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="currentSpeed">
+												<swe:Quantity
+												definition="http://mmisw.org/ont/cf/parameter/sea_water_speed">
+												<swe:label>Current Speed</swe:label>
+												<swe:uom code="m/s"/>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="currentDirection">
+												<swe:Quantity
+												definition="http://mmisw.org/ont/cf/parameter/sea_water_velocity_from_direction">
+												<swe:label>Current Direction</swe:label>
+												<swe:uom code="deg"/>
+												</swe:Quantity>
+												</swe:field>
+												</swe:DataRecord>
+											</sml:output>
+										</sml:OutputList>
+									</sml:outputs>
+								</gco:Record>
+							</mac:otherProperty>
+
+							<mac:history>
+								<mac:MI_InstrumentationEventList>
+									<mac:citation>
+										<cit:CI_Citation>
+											<cit:title>
+												<gco:CharacterString>{{Survey Event Title}}</gco:CharacterString>
+											</cit:title>
+											<cit:onlineResource>
+												<cit:CI_OnlineResource>
+												<cit:linkage>
+												<gco:CharacterString>{{Link to Mission report}}</gco:CharacterString>
+												</cit:linkage>
+												</cit:CI_OnlineResource>
+											</cit:onlineResource>
+										</cit:CI_Citation>
+									</mac:citation>
+									<mac:description>
+										<gco:CharacterString>{{Description of event which triggered instrument (ex. reached pre-determined survey depth)}}</gco:CharacterString>
+									</mac:description>
+									<mac:locale>
+										<lan:PT_Locale>
+											<lan:language>
+												<lan:LanguageCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+											</lan:language>
+											<lan:characterEncoding>
+												<lan:MD_CharacterSetCode codeList="https://standards.iso.org/iso/19139/resources/ML_gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+											</lan:characterEncoding>
+										</lan:PT_Locale>
+									</mac:locale>
+									<mac:metadataConstraints/>
+									<mac:instrumentationEvent/>
+								</mac:MI_InstrumentationEventList>
+							</mac:history>
+						</mac:MI_Instrument>
+					</mac:instrument>
+					<mac:otherPropertyType/>
+
+
+					<mac:otherProperty>
+						<gco:Record>
+							<!-- ======================================= -->
+							<!-- Characteristics -->
+							<!-- ======================================= -->
+							<!-- Example list of Characteristics to describe physical attributes of 
+	platform, refer to sensorml.com/ont/swe/property for full list of values -->
+							<sml:characteristics name="generalProperties">
+								<sml:CharacteristicList>
+									<sml:characteristic name="physicalProperties">
+										<swe:DataRecord
+											definition="http://sensorml.com/ont/swe/property/PhysicalProperties">
+											<swe:label>Physical Properties</swe:label>
+											<swe:field name="PhysicalProperties">
+												<swe:DataRecord>
+												<!-- Values of Physical Property in UOM specified based on platform specifications -->
+												<swe:field name="Weight">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Weight">
+												<swe:uom code="oz"/>
+												<swe:value>{{856}}</swe:value>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="Length">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Length">
+												<swe:uom code="in"/>
+												<swe:value>{{108}}</swe:value>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="Width">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Width">
+												<swe:uom code="in"/>
+												<swe:value>{{32}}</swe:value>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="Height">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Height">
+												<swe:uom code="in"/>
+												<swe:value>{{32}}</swe:value>
+												</swe:Quantity>
+												</swe:field>
+												<swe:field name="CasingMaterial">
+												<swe:Category
+												definition="http://sensorml.com/ont/swe/property/Material">
+												<swe:value>{{Steel}}</swe:value>
+												</swe:Category>
+												</swe:field>
+												</swe:DataRecord>
+											</swe:field>
+										</swe:DataRecord>
+									</sml:characteristic>
+									<!-- Electircal Requirements by Platform Components -->
+									<sml:characteristic name="electricalRequirements">
+										<swe:DataRecord
+											definition="http://sensorml.com/ont/swe/property/PowerRequirement">
+											<swe:label>Electrical Requirements</swe:label>
+											<swe:field name="voltage">
+												<swe:QuantityRange
+												definition="http://sensorml.com/ont/swe/property/Voltage">
+												<swe:uom code="V"/>
+												<!-- Range of Voltage Electrical System can operate at-->
+												<swe:value>{{12 120}}</swe:value>
+												</swe:QuantityRange>
+											</swe:field>
+											<swe:field name="CurrentType">
+												<swe:Category
+												definition="http://sensorml.com/ont/swe/property/ElectricalCurrentType">
+												<!-- Platform's required electrical current type (AC or DC)-->
+												<swe:value>{{AC}}</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="AmpRange">
+												<swe:QuantityRange
+												definition="http://sensorml.com/ont/swe/property/ElectricalCurrent">
+												<swe:uom code="mA"/>
+												<!-- Range of Amperage Electrical System can operate at-->
+												<swe:value>{{5 120}}</swe:value>
+												</swe:QuantityRange>
+											</swe:field>
+										</swe:DataRecord>
+									</sml:characteristic>
+								</sml:CharacteristicList>
+							</sml:characteristics>
+							<!-- ================================================= -->
+							<!-- Dynamic Location -->
+							<!-- ================================================= -->
+							<sml:position>
+								<!-- Location will be described as either way points, trajectory, or other 
+	time + GPS coordinates to show location of vehicle at the time of sensor 
+	measurements -->
+								<swe:DataArray
+									definition="http://sensorml.com/ont/swe/property/Trajectory">
+									<swe:elementCount>
+										<swe:Count>
+											<swe:value>{{integer of number of times position was
+												recorded during mission}} </swe:value>
+										</swe:Count>
+									</swe:elementCount>
+									<swe:elementType name="trajectory">
+										<swe:DataRecord
+											definition="http://sensorml.com/ont/swe/property/TrajectoryPositions">
+											<swe:field name="samplingTime">
+												<swe:Time
+												definition="http://sensorml.com/ont/swe/property/SamplingTime">
+												<swe:label>Sampling Time</swe:label>
+												<swe:uom
+												xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+												/>
+												</swe:Time>
+											</swe:field>
+											<swe:field name="location">
+												<swe:Vector
+												definition="http://sensorml.com/ont/swe/property/location"
+												referenceFrame="http://www.opengis.net/def/crs/EPSG/6.7/4326"
+												localFrame="#SENSOR_CRS">
+												<swe:label>{{Platform Location information, can be
+												launch/recovery point, bounding box coordinates,
+												or survey waypoints}}</swe:label>
+												<swe:coordinate name="Lat">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Latitude"
+												axisID="Lat">
+												<swe:uom code="deg"/>
+												</swe:Quantity>
+												</swe:coordinate>
+												<swe:coordinate name="Lon">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Longitude"
+												axisID="Long">
+												<swe:uom code="deg"/>
+												</swe:Quantity>
+												</swe:coordinate>
+												</swe:Vector>
+											</swe:field>
+										</swe:DataRecord>
+									</swe:elementType>
+									<swe:encoding>
+										<swe:TextEncoding blockSeparator=" " tokenSeparator=","/>
+									</swe:encoding>
+									<swe:values> {{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}}
+										{{YYY-MM-DDTHH:mm:ssZ, Lat DD.DD, Lon DD.DD}} </swe:values>
+								</swe:DataArray>
+							</sml:position>
+
+							<!--Connections between components and ouput for the operation -->
+							<!-- =================================================== -->
+							<!-- Connections between components and system output -->
+							<!-- =================================================== -->
+							<!-- Example list of sensors and specific data outputs which are attributed 
+		to them -->
+							<sml:connections>
+								<sml:ConnectionList>
+									<!-- connection between ADCP thermometer's output and system's temperature 
+				output -->
+									<sml:connection>
+										<sml:Link>
+											<sml:source ref="components/ADCP/outputs/temperature"/>
+											<sml:destination ref="outputs/PhysO/temperature"/>
+										</sml:Link>
+									</sml:connection>
+									<!-- connection between ADCP current speed output and system's current 
+				speed output -->
+									<sml:connection>
+										<sml:Link>
+											<sml:source ref="components/ADCP/outputs/currentSpeed"/>
+											<sml:destination ref="outputs/PhysO/currentSpeed"/>
+										</sml:Link>
+									</sml:connection>
+									<!-- connection between ADCP current direction output and system's current 
+				direction output -->
+									<sml:connection>
+										<sml:Link>
+											<sml:source
+												ref="components/ADCP/outputs/currentDirection"/>
+											<sml:destination ref="outputs/PhysO/currentDirection"/>
+										</sml:Link>
+									</sml:connection>
+									<!-- connection between GPS's output and navigation input -->
+									<sml:connection>
+										<sml:Link>
+											<sml:source ref="components/GPS/outputs/position"/>
+											<sml:destination ref="outputs/Nav/position"/>
+										</sml:Link>
+									</sml:connection>
+									<!-- connection between INS's output and navigation input -->
+									<sml:connection>
+										<sml:Link>
+											<sml:source ref="components/INS/outputs/position"/>
+											<sml:destination ref="outputs/Nav/position"/>
+										</sml:Link>
+									</sml:connection>
+									<!-- connection between INS's depth output and navigation depth input -->
+									<sml:connection>
+										<sml:Link>
+											<sml:source ref="components/INS/outputs/depth"/>
+											<sml:destination ref="outputs/Nav/depth"/>
+										</sml:Link>
+									</sml:connection>
+								</sml:ConnectionList>
+							</sml:connections>
+							
+							
+							<!-- ============================ -->
+							<!-- Capabilities -->
+							<!-- ============================ -->
+							<!-- Example list of Platform and Sensor capabilities with minimum and maximum 
+	values for each data parameter, refer to sensorml.com/ont/swe/property for 
+	full list of values -->
+							<sml:capabilities name="specifications">
+								<sml:capability name="measurementProperties">
+									<sml:CapabilityList>
+										<swe:DataRecord
+											definition="http://sensorml.com/ont/swe/property/MeasurementProperties">
+											<swe:label>Measurement Properties</swe:label>
+											<swe:field name="Latitude">
+												<swe:QuantityRange
+												definition="http://sensorml.com/ont/swe/property/Latitude">
+												<swe:uom code="deg"/>
+												<swe:value>0 90</swe:value>
+												</swe:QuantityRange>
+											</swe:field>
+											<swe:field name="Longitude">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/Longitude">
+												<swe:uom code="deg"/>
+												<swe:value>-180 180</swe:value>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="Heading">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/MagneticHeading">
+												<swe:uom code="deg"/>
+												<swe:value>0 360</swe:value>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="PitchAngle">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/PitchAngle">
+												<swe:uom code="deg"/>
+												<swe:value>0 360 </swe:value>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="RollAngle">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/RollAngle">
+												<swe:uom code="deg"/>
+												<swe:value>0 360</swe:value>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="SamplePeriod">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/SamplePeriod">
+												<swe:uom code="s"/>
+												<swe:value>1</swe:value>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="SpeedOverWater">
+												<swe:Quantity
+												definition="http://sensorml.com/ont/swe/property/SpeedOverWater">
+												<swe:uom code="m/s"/>
+												<swe:value>0 99</swe:value>
+												</swe:Quantity>
+											</swe:field>
+										</swe:DataRecord>
+									</sml:CapabilityList>
+								</sml:capability>
+							</sml:capabilities>
+						</gco:Record>
+					</mac:otherProperty>
+
+
+
+					<mac:history>
+						<mac:MI_InstrumentationEventList>
+							<mac:citation/>
+							<mac:description/>
+							<mac:locale/>
+							<mac:metadataConstraints/>
+							<mac:instrumentationEvent/>
+						</mac:MI_InstrumentationEventList>
+					</mac:history>
+				</mac:MI_Platform>
+			</mac:platform>
+
+			<mac:acquisitionRequirement>
+				<mac:MI_Requirement>
+					<mac:citation/>
+					<mac:identifier>
+						<mcc:MD_Identifier id="acquisitionRequirement">
+							<mcc:code>
+								<gco:CharacterString>{{Details operation objective or requirement in general terms}}
+								</gco:CharacterString>
+							</mcc:code>
+						</mcc:MD_Identifier>
+					</mac:identifier>
+					<mac:requestor/>
+					<mac:recipient/>
+					<mac:priority>
+						<mac:MI_PriorityCode codeList="https://standards.iso.org/iso/19139/resourcesCodelist/gmxCodelists.xml#MI_PriorityCode" codeListValue="highImportance">highImportance</mac:MI_PriorityCode>
+					</mac:priority>
+					<mac:requestedDate>
+						<mac:MI_RequestedDate>
+							<mac:requestedDateOfCollection>
+								<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+							</mac:requestedDateOfCollection>
+							<mac:latestAcceptableDate>
+								<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+							</mac:latestAcceptableDate>
+						</mac:MI_RequestedDate>
+					</mac:requestedDate>
+					<mac:expiryDate>
+						<gco:DateTime>2000-01-01T00:00:00Z</gco:DateTime>
+					</mac:expiryDate>
+					<mac:satisifiedPlan/>
+				</mac:MI_Requirement>
+			</mac:acquisitionRequirement>
+		</mac:MI_AcquisitionInformation>
+	</mdb:acquisitionInformation>
+</mdb:MD_Metadata>
