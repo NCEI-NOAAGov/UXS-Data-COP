@@ -1,49 +1,40 @@
-# Uxs Data Cop
 
 
 
-## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+![alt text](UxS.jpg)
+# UxS Data Community of Practice
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+The UxS Data CoP is a community of practice for the uncrewed sytems community. This repository is designed to be a library of sorts that contains standard operating procedures, policy documentation, metadata profiles, and documentation related to the formation of the community itself. Dcoumentation will be updated periodically as consensus is formed within the community. If you have documentation you would like to share with the UxS Data CoP or would like to be added to our mailing list, please email (andrew.evans@noaa.gov)
 
-## Add your files
+# Purpose and Scope
+The Uncrewed Systems (UxS) Data Community of Practice (CoP) is established for the purpose of providing a forum for the standardization of data practices, data management protocols, and vocabularies related to UxS data. This forum will enhance inter- and intra agency collaboration, as well as foster relationships within state, academia, and industry stakeholders. 
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+# Background
+Over the last decade, the use of uncrewed systems for the collection of data has increased exponentially. During this time, the focus has been on the improvement of the sensors, platform endurance, and multi-mission payload technologies. As a result, the amount of data collected by UxS has increased 10 fold overwhelming much of the current system architecture that handles environmental data. There is also a lack of formal or published data formats, minimum metadata, and common vocabulary. This community of practice seeks to improve and harmonize UxS data science to improve the findability, accessibility, interoperability, and reusability of UxS data. The UxS Data CoP will serve the UxS community across federal and state governments, and academic institutional partners in collaboration with industry stakeholders to formalize metadata practices, identify common data formats, and standardize vocabulary used. .
 
-```
-cd existing_repo
-git remote add origin https://git.services.nesdis.noaa.gov/andrew.evans/uxs-data-cop.git
-git branch -M main
-git push -uf origin main
-```
+# Definition of Uncrewed Systems
+Uncrewed systems are remotely operated or autonomous platforms that can perform its mission without an onboard human presence and may include operational components such as control and communication and scientific instruments. Uncrewed systems include platforms that can operate in one or more of the following domains: underwater, surface of the water, aerial, and terrestrial.  The CoP’s use of the term "uncrewed system" includes the following nomenclature: "remotely piloted systems," "remotely operated vehicles," "unmanned systems," "unmanned vehicles," "autonomous systems," "autonomous vehicles," and variants including "unmanned surface vehicles/systems," "unmanned underwater vehicles/systems," "unmanned aircraft vehicles/systems," autonomous surface vehicles/systems," "autonomous underwater vehicles/systems," and "autonomous aircraft vehicles/systems." The CoP’s use of the term "uncrewed systems" does not encompass satellites, weather balloons, or buoys.
 
-## Integrate with your tools
+# Goals:
+Foster collaboration across government agencies, academic institutions, and industry partners
+Share and promote best practices for data management and stewardship of UxS data to enhance the Findability, Accessibility, Interoperability, and Reusability (FAIR) of UxS Data
+Promote commonality across domains for data formatting, vocabulary, and metadata
 
-- [ ] [Set up project integrations](https://git.services.nesdis.noaa.gov/andrew.evans/uxs-data-cop/-/settings/integrations)
+# Objectives:
+Quarterly meetings between stakeholders at partner institutions to identify current issues facing the management of UxS data
+Development of standardized metadata template across aerial, terrestrial, and maritime domains
+Publish quarterly newsletter to inform stakeholders of new technologies, data management practices, and upcoming presentations of relevance
 
-## Collaborate with your team
+# Outcomes:
+Unified metadata standards across the UxS community
+Fixed vocabularies for making UxS data FAIR
+Documentation of best practices for all UxS domains
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
 
-## Test and Deploy
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
+#
 # Editing this README
 
 When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
@@ -64,30 +55,4 @@ On some READMEs, you may see small images that convey metadata, such as whether 
 ## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
